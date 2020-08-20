@@ -1,11 +1,11 @@
 name: 'newbiefy-test'
 on:
-  push:
+  create:
     branches:
-      - master
+      - newbiefy*
 
 jobs:
-  snap:
+  newbiefy:
     runs-on: ubuntu-latest
     steps:
       - uses: dansyuqri/newbiefy@v1
