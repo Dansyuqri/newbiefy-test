@@ -1,0 +1,13 @@
+name: 'newbiefy-test'
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dansyuqri/newbiefy@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
