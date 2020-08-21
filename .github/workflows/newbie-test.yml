@@ -8,6 +8,6 @@ jobs:
   newbiefy:
     runs-on: ubuntu-latest
     steps:
-      - uses: dansyuqri/newbiefy@v1
+      - uses: dansyuqri/newbiefy@latest
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
