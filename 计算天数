@@ -1,0 +1,52 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+int ts(int year,int mon);
+bool rn(int year);
+int main(void)
+{
+	int year, mon, day,jg;
+	while (scanf("%d/%d/%d",&year,&mon,&day)!=EOF)
+	{
+		jg = ts(year, mon);
+		printf("\n%d\n", jg+day);
+	}
+}
+int ts(int year, int mon)
+{
+	int dj=0;
+	switch (mon-1)
+	{
+	case 11:dj +=30;
+	case 10:dj += 31;
+	case 9:dj += 30;
+	case 8:dj += 31;
+	case 7:dj += 31;
+	case 6:dj += 30;
+	case 5:dj += 31;
+	case 4:dj += 30;
+	case 3:dj += 31;
+	case 2:if (rn(year))
+	{
+		dj += 29;
+	}
+		   else
+	{
+		dj += 28;
+	}
+	case 1:dj += 31;
+	}
+	return dj;
+}
+bool rn(int year)
+{
+	bool f=false;
+	if (year%100==0&&year%400==0)
+	{
+		f = true;
+	}
+	else if(year%100!=0&&year%4==0)
+	{
+		f = true;
+	}
+	return f;
